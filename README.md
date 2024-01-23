@@ -1,27 +1,69 @@
-# SafT3
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.0.
+# Saf-T-Child
 
-## Development server
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Getting Started
 
-## Code scaffolding
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Prerequisites
 
-## Build
+What things you need to install the software:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- [Node.js](https://nodejs.org/)
+- [Angular CLI](https://angular.io/cli)
+- [Git](https://git-scm.com/)
 
-## Running unit tests
+### Installing
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+A step-by-step series of examples that tell you how to get a development environment running.
 
-## Running end-to-end tests
+1. Clone the repository:
+   ```
+   git clone [repository URL]
+   ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+2. Navigate to the project directory:
+   ```
+   cd [project directory]
+   ```
 
-## Further help
+3. Install dependencies:
+   ```
+   npm install
+   ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Running the Application
+
+To run the application locally:
+
+```
+ng serve
+```
+
+Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Code Formatting with Prettier
+
+For consistent code formatting, we use Prettier. It is recommended to install the Prettier extension in your code editor and set it as the default formatter.
+
+### Setting up Prettier
+
+1. Install Prettier globally:
+   ```
+   npm install --global prettier
+   ```
+
+2. In your editor settings, set Prettier as your default formatter.
+
+3. Enable "Format On Save" to automatically format your code each time you save a file.
+
+## Husky Pre-commit Hook
+
+This project uses Husky to enforce code quality checks before commits. Husky is set up to run linters and other checks as a pre-commit hook.
+
+### Using Husky
+
+Husky is already configured in this project. To ensure it works properly, please do not bypass pre-commit hooks with commands like `git commit --no-verify`.
+
