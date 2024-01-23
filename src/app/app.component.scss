@@ -1,0 +1,54 @@
+
+
+/* In your component's SCSS file */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black background */
+  z-index: 1000; /* Ensure it's above other content */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 0.8s ease; /* Smooth transition for the opacity */
+  visibility: visible; /* Use visibility to ensure the element is not clickable when hidden */
+}
+
+/* Add this class to your component when you want to hide it */
+.menu-overlay-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0s 0.5s, opacity 0.5s ease; /* Delay the visibility transition until after the opacity transition */
+}
+
+.menu-container {
+  text-align: center;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 30px;
+  color: #fff;
+  border: none;
+  background: none;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-item {
+  color: #fff;
+  font-size: 24px;
+  text-decoration: none;
+  display: block;
+  margin: 10px 0;
+}
+
+/* Additional styles for animations or transitions */

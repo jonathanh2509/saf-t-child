@@ -1,12 +1,18 @@
 {
-  "name": "saf-t-3",
+  "name": "Safe-T-Child",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "prettier": "prettier --write 'src/**/*.ts'",
+    "prettier-check": "prettier --check 'src/**/*.ts'",
+    "format:fix": "pretty-quick --staged",
+    "precommit": "run-s format:fix lint",
+    "lint": "ng lint",
+    "format:check": "prettier --config ./.prettierrc --list-different \"src/{app,environments,assets}/**/*{.ts,.js,.json,.css,.scss}\""
   },
   "private": true,
   "dependencies": {
@@ -18,6 +24,9 @@
     "@angular/platform-browser": "^17.1.0",
     "@angular/platform-browser-dynamic": "^17.1.0",
     "@angular/router": "^17.1.0",
+    "bootstrap": "^5.3.2",
+    "bootstrap-icons": "^1.11.3",
+    "lodash": "^4.17.21",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
@@ -26,13 +35,19 @@
     "@angular-devkit/build-angular": "^17.1.0",
     "@angular/cli": "^17.1.0",
     "@angular/compiler-cli": "^17.1.0",
+    "@ng-bootstrap/ng-bootstrap": "^16.0.0-rc.2",
     "@types/jasmine": "~5.1.0",
+    "@types/lodash": "^4.14.202",
+    "husky": "^8.0.3",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.2.4",
+    "pretty-quick": "^4.0.0",
     "typescript": "~5.3.2"
   }
 }
