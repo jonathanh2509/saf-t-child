@@ -1,4 +1,7 @@
-<!-- Overlay Menu Component -->
+<!-- Overlay Menu Component 
+It will have to stay here to be able to have scss styling 
+for transition and overlay effect
+-->
 <div class="menu-overlay" [class]="overlayClass">
   <div class="menu-container">
     <button class="close-btn" (click)="toggleOverlay()">&times;</button>
@@ -15,15 +18,21 @@
       <li>
         <a class="menu-item" href="#" (click)="toggleOverlay()">Option 3</a>
       </li>
-      <!-- Add other menu items here -->
     </ul>
   </div>
 </div>
 
 <main *ngIf="!showOverlay">
   <app-mobile-header
-    *ngIf="isMobile"
+    *ngIf="isMobile; else desktopHeader"
     (toggleOverlay)="toggleOverlay()"
   ></app-mobile-header>
+  <ng-template #desktopHeader>
+    <app-desktop-header></app-desktop-header>
+  </ng-template>
+
   <router-outlet></router-outlet>
+
+  <!-- For footer we will use mobile footer for both mobile and desktop -->
+  <app-mobile-footer></app-mobile-footer>
 </main>

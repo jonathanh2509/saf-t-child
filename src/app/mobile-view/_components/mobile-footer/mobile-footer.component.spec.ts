@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DesktopViewComponent } from './desktop-view.component';
+import { MobileFooterComponent } from './mobile-footer.component';
 
-describe('DesktopViewComponent', () => {
-  let component: DesktopViewComponent;
-  let fixture: ComponentFixture<DesktopViewComponent>;
+describe('MobileFooterComponent', () => {
+  let component: MobileFooterComponent;
+  let fixture: ComponentFixture<MobileFooterComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DesktopViewComponent]
+      declarations: [MobileFooterComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(DesktopViewComponent);
+    fixture = TestBed.createComponent(MobileFooterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
