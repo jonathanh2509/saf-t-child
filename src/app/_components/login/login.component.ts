@@ -53,6 +53,7 @@ export class LoginComponent implements OnInit {
       .subscribe({
         next: () => {
           console.log('good');
+          this.router.navigate(['/dashboard']);
           // Remember to set isLoading to false once the operation is complete
           this.isLoading = false;
         },
