@@ -1,26 +1,29 @@
 /* Assuming .content-wrapper is the class of the div that wraps around your routed content */
 .content-mobile {
   padding: 1rem;
-  opacity: 0; /* Start with the content invisible */
-  transform: translateY(20px); /* Start the content slightly off-screen */
+  opacity: 0;
+  transform: translateY(20px);
   transition:
     opacity 0.5s ease-in-out,
-    transform 0.5s ease-in-out; /* Transition for both opacity and transform */
+    transform 0.5s ease-in-out;
 }
 
-/* When the content is active, we want it to be fully visible and positioned correctly */
 .content.active {
   padding: 1rem;
-  opacity: 1; /* Fully visible */
-  transform: translateY(0); /* Positioned at the starting point */
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .header-mobile {
   padding: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .header-desktop {
-  padding: 1.5rem;
+  padding: 3.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .content-desktop {
@@ -30,4 +33,13 @@
   transition:
     opacity 0.5s ease-in-out,
     transform 0.5s ease-in-out; /* Transition for both opacity and transform */
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }

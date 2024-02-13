@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DesktopFooterComponent } from './desktop-footer.component';
+import { DashboardComponent } from './dashboard.component';
 
-describe('DesktopFooterComponent', () => {
-  let component: DesktopFooterComponent;
-  let fixture: ComponentFixture<DesktopFooterComponent>;
+describe('DashboardComponent', () => {
+  let component: DashboardComponent;
+  let fixture: ComponentFixture<DashboardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DesktopFooterComponent]
+      declarations: [DashboardComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(DesktopFooterComponent);
+    fixture = TestBed.createComponent(DashboardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
