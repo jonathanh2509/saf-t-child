@@ -16,7 +16,9 @@ for transition and overlay effect
         <a class="menu-item" href="/login" (click)="toggleOverlay()">Login</a>
       </li>
       <li>
-        <a class="menu-item" href="#" (click)="toggleOverlay()">Option 3</a>
+        <a class="menu-item" href="/dashboard" (click)="toggleOverlay()"
+          >Dashboard</a
+        >
       </li>
     </ul>
   </div>
@@ -34,5 +36,5 @@ for transition and overlay effect
   <router-outlet></router-outlet>
 
   <!-- For footer we will use mobile footer for both mobile and desktop -->
-  <app-mobile-footer></app-mobile-footer>
+  <app-footer></app-footer>
 </main>
