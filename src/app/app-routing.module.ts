@@ -3,10 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { BootstrapSamplesComponent } from './_components/bootstrap-samples/bootstrap-samples.component';
 import { LoginComponent } from './_components/login/login.component';
 import { DashboardComponent } from './_components/dashboard/dashboard.component';
+import { CreateAccountComponent } from './_components/create-account/create-account.component';
 
 const routes: Routes = [
   { path: 'bootstrap-samples', component: BootstrapSamplesComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'create-account', component: CreateAccountComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
 ];

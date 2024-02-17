@@ -10,14 +10,14 @@
     <div
       class="d-flex flex-column justify-content-center gap-1 align-items-center"
     >
-      <h2>Login</h2>
+      <h2>Create New Account</h2>
       <div class="d-inline">
-        <p class="d-inline">New to Saf-T Child? </p>
+        <p class="d-inline">Already have an account? </p>
         <a
-          href="/create-account"
-          class="create-account-link"
+          href="/login"
+          class="login-link d-inline"
           style="text-decoration: underline"
-          >Create Account</a
+          >Login</a
         >
       </div>
     </div>
@@ -39,10 +39,10 @@
       <button
         type="button"
         class="btn btn-primary"
-        (click)="login()"
+        (click)="createAccount()"
         *ngIf="!isLoading; else loadingTemplate"
       >
-        Login
+        Create Account
       </button>
       <ng-template #loadingTemplate>
         <button type="button" class="btn btn-primary" disabled>
