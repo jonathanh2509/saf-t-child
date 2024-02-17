@@ -12,6 +12,7 @@ import { FooterComponent } from './_components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './_components/dashboard/dashboard.component';
+import { CreateAccountComponent } from './_components/create-account/create-account.component';
 import { MatIconModule } from '@angular/material/icon';
 import { EditModalComponent } from './_components/edit-modal/edit-modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -25,6 +26,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     DesktopHeaderComponent,
     FooterComponent,
     DashboardComponent,
+    CreateAccountComponent,
     EditModalComponent,
   ],
   imports: [
