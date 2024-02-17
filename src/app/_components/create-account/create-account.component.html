@@ -1,18 +1,17 @@
 <div
   class="content d-flex justify-content-center align-items-center"
   [class.active]="contentActive"
-  style="height: 65vh"
 >
   <div
-    class="d-flex bg-white p-4 m-2 rounded-3 shadow flex-column justify-content-center gap-3 custom-max-width-vw"
-    [ngClass]="!isMobile ? 'desktop-custom-width' : ''"
+    class="d-flex bg-white p-4 m-2 rounded-3 shadow flex-column justify-content-center gap-3"
+    [ngClass]="!isMobile ? 'desktop-custom-width' : 'custom-max-width-vw'"
   >
     <div
       class="d-flex flex-column justify-content-center gap-1 align-items-center"
     >
       <h2>Create New Account</h2>
       <div class="d-inline">
-        <p class="d-inline">Already have an account? </p>
+        <p class="d-inline">Already have an account?</p>
         <a
           href="/login"
           class="login-link d-inline"
@@ -22,20 +21,113 @@
       </div>
     </div>
     <form [formGroup]="formGroup" class="d-flex flex-column gap-2">
-      <input
-        class="form-control"
-        type="text"
-        id="username"
-        placeholder="Username"
-        formControlName="username"
-      />
-      <input
-        type="password"
-        class="form-control"
-        id="password"
-        placeholder="Password"
-        formControlName="password"
-      />
+      <div class="form-group">
+        <label for="firstName" class="form-label">First Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="firstName"
+          placeholder="John"
+          formControlName="firstName"
+        />
+        <span
+          *ngIf="firstName?.invalid && firstName.touched"
+          class="text-danger"
+        >
+          Please enter a valid first name.
+        </span>
+      </div>
+
+      <div class="form-group">
+        <label for="lastName" class="form-label">Last Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="lastName"
+          placeholder="Doe"
+          formControlName="lastName"
+        />
+        <span *ngIf="lastName?.invalid && lastName.touched" class="text-danger">
+          Please enter a valid last name.
+        </span>
+      </div>
+
+      <div class="form-group">
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          placeholder="john@gmail.com"
+          formControlName="email"
+        />
+        <span
+          *ngIf="email.errors?.['email'] && email.touched"
+          class="text-danger"
+        >
+          Please enter a valid email address.
+        </span>
+      </div>
+
+      <div class="form-group">
+        <label for="phoneNumber" class="form-label">Phone Number</label>
+        <input
+          type="text"
+          class="form-control"
+          id="phoneNumber"
+          placeholder="123-456-7890"
+          formControlName="phoneNumber"
+        />
+        <span
+          *ngIf="
+            phoneNumber.errors?.['invalidAmericanPhoneNumber'] &&
+            phoneNumber.touched
+          "
+          class="text-danger"
+        >
+          Please enter a valid American phone number.
+        </span>
+      </div>
+
+      <div class="form-group">
+        <label for="username" class="form-label">Username</label>
+        <input
+          class="form-control"
+          type="text"
+          id="username"
+          placeholder="Username"
+          formControlName="username"
+        />
+        <span
+          *ngIf="
+            formGroup.get('username')?.invalid &&
+            formGroup.get('username')?.touched
+          "
+          class="text-danger"
+        >
+          Please choose a username.
+        </span>
+      </div>
+
+      <div class="form-group">
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          placeholder="Password"
+          formControlName="password"
+        />
+        <span
+          *ngIf="
+            formGroup.get('password')?.invalid &&
+            formGroup.get('password')?.touched
+          "
+          class="text-danger"
+        >
+          Password is required.
+        </span>
+      </div>
       <button
         type="button"
         class="btn btn-primary"

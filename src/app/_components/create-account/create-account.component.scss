@@ -1,7 +1,9 @@
 .custom-max-width-vw {
-    max-width: 17rem;
-  }
-  
-  .desktop-custom-width {
-    width: 305rem;
-  }  
+  max-width: 20rem;
+  min-width: 20rem;
+}
+
+.desktop-custom-width {
+  max-width: 50rem;
+  min-width: 40rem;
+}

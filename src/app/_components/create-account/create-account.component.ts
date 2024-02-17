@@ -2,8 +2,14 @@ import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { windowBreakpoint } from '../../../../environment';
 import { SafTChildServiceProxy } from '../../_services/saft-t-child.service.proxy';
 import { Router } from '@angular/router';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { switchMap, timer } from 'rxjs';
+import {
+  AbstractControl,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
+
 @Component({
   selector: 'app-create-account',
   templateUrl: './create-account.component.html',
@@ -16,10 +22,35 @@ export class CreateAccountComponent implements OnInit {
   showInvalidLogin = false;
   isLoading = false;
 
+  //TODO: add validation to make sure that username is not already taken
   username: FormControl<any | null> = new FormControl(
     null,
     Validators.required,
   );
+  firstName: FormControl<any | null> = new FormControl(
+    null,
+    Validators.required,
+  );
+  lastName: FormControl<any | null> = new FormControl(
+    null,
+    Validators.required,
+  );
+
+  //TODO: Add phone number validation
+  // make sure that phone number is good and that
+  // it is not assigned to another account
+  phoneNumber: FormControl<any | null> = new FormControl(null, [
+    Validators.required,
+    this.americanPhoneNumberValidator,
+  ]);
+
+  //TODO: Add phone number validation
+  // make sure that phone number is good and that
+  // it is not assigned to another account
+  email: FormControl<any | null> = new FormControl(null, [
+    Validators.required,
+    Validators.email,
+  ]);
   password: FormControl<any | null> = new FormControl(
     null,
     Validators.required,
@@ -27,6 +58,10 @@ export class CreateAccountComponent implements OnInit {
   formGroup: FormGroup = new FormGroup({
     username: this.username,
     password: this.password,
+    firstName: this.firstName,
+    lastName: this.lastName,
+    phoneNumber: this.phoneNumber,
+    email: this.email,
   });
 
   isMobile: boolean = window.innerWidth < windowBreakpoint; // Example breakpoint
@@ -40,6 +75,7 @@ export class CreateAccountComponent implements OnInit {
   }
   constructor(
     private safTChildServiceProxy: SafTChildServiceProxy,
+    private fb: FormBuilder,
     private router: Router,
   ) {}
   createAccount() {
@@ -64,5 +100,17 @@ export class CreateAccountComponent implements OnInit {
     //       this.showInvalidLogin = true;
     //     },
     //   });
+  }
+
+  americanPhoneNumberValidator(control: AbstractControl) {
+    const phoneNumber = control.value;
+    if (phoneNumber) {
+      const phoneNumberRegex = /^\d{3}-\d{3}-\d{4}$/;
+      if (phoneNumberRegex.test(phoneNumber)) {
+        return null;
+      }
+      return { invalidPhoneNumber: true };
+    }
+    return null;
   }
 }
