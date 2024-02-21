@@ -17,6 +17,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { EditModalComponent } from './_components/edit-modal/edit-modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { AboutComponent } from './_components/about/about.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +30,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     DashboardComponent,
     CreateAccountComponent,
     EditModalComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

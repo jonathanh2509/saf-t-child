@@ -8,7 +8,7 @@ import { windowBreakpoint } from '../../environment';
 })
 export class AppComponent {
   title = 'Safe-T-Child';
-  s = 'Capstone Project Team 7';
+  s = 'Capstone Project Team 4';
   isMobile: boolean = window.innerWidth < windowBreakpoint; // Example breakpoint
   showOverlay: boolean = false;
 
