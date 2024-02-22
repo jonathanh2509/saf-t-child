@@ -17,6 +17,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { EditModalComponent } from './_components/edit-modal/edit-modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { DevicesComponent } from './_components/dashboard/devices/devices.component';
+import { VehiclesComponent } from './_components/dashboard/vehicles/vehicles.component';
+import { GroupsComponent } from './_components/dashboard/groups/groups.component';
 import { AboutComponent } from './_components/about/about.component';
 
 @NgModule({
@@ -30,7 +33,10 @@ import { AboutComponent } from './_components/about/about.component';
     DashboardComponent,
     CreateAccountComponent,
     EditModalComponent,
-    AboutComponent
+    DevicesComponent,
+    VehiclesComponent,
+    GroupsComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

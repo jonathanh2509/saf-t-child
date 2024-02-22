@@ -5,19 +5,22 @@ for transition and overlay effect
 <div class="menu-overlay" [class]="overlayClass">
   <div class="menu-container">
     <button class="close-btn" (click)="toggleOverlay()">&times;</button>
-    <ul class="menu-list">
-      <li><a class="menu-item" href="/" (click)="toggleOverlay()">Menu</a></li>
-      <li>
-        <a class="menu-item" href="/bootstrap-samples" (click)="toggleOverlay()"
-          >Samples</a
-        >
-      </li>
-      <li>
-        <a class="menu-item" href="/login" (click)="toggleOverlay()">Login</a>
-      </li>
+    <ul class="menu-list d-flex row gap-1">
       <li>
         <a class="menu-item" href="/dashboard" (click)="toggleOverlay()"
           >Dashboard</a
+        >
+      </li>
+      <li *ngIf="!userAuthenticated">
+        <a class="menu-item" href="/login" (click)="toggleOverlay()">Login</a>
+      </li>
+      <li *ngIf="userAuthenticated" style="cursor: pointer">
+        <a class="menu-item" (click)="toggleOverlay(true)">Logout</a>
+      </li>
+      <li><a class="menu-item" href="/" (click)="toggleOverlay()">About</a></li>
+      <li>
+        <a class="menu-item" href="/bootstrap-samples" (click)="toggleOverlay()"
+          >Samples</a
         >
       </li>
     </ul>
@@ -28,9 +31,14 @@ for transition and overlay effect
   <app-mobile-header
     *ngIf="isMobile; else desktopHeader"
     (toggleOverlay)="toggleOverlay()"
+    (logout)="logout()"
+    [userAuthenticated]="userAuthenticated"
   ></app-mobile-header>
   <ng-template #desktopHeader>
-    <app-desktop-header></app-desktop-header>
+    <app-desktop-header
+      [userAuthenticated]="userAuthenticated"
+      (logout)="logout()"
+    ></app-desktop-header>
   </ng-template>
 
   <router-outlet></router-outlet>

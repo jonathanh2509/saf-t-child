@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core'
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-mobile-header',
@@ -7,10 +7,14 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
   styleUrl: './mobile-header.component.scss',
 })
 export class MobileHeaderComponent {
-  @Output() toggleOverlay = new EventEmitter<void>()
-
+  @Output() toggleOverlay = new EventEmitter<void>();
+  @Input() userAuthenticated: boolean = false;
+  @Output() logout = new EventEmitter<void>();
   showMenu() {
-    console.log('Toggle overlay')
-    this.toggleOverlay.emit()
+    this.toggleOverlay.emit();
+  }
+
+  onLogout() {
+    this.logout.emit();
   }
 }

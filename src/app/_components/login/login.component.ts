@@ -3,12 +3,12 @@ import { windowBreakpoint } from '../../../../environment';
 import { SafTChildServiceProxy } from '../../_services/saft-t-child.service.proxy';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { switchMap, timer } from 'rxjs';
+import { UserAuthenticationService } from '../../_services/user-authentication.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
-  providers: [SafTChildServiceProxy],
+  providers: [SafTChildServiceProxy, UserAuthenticationService],
 })
 export class LoginComponent implements OnInit {
   // Class binding property
@@ -32,7 +32,17 @@ export class LoginComponent implements OnInit {
   isMobile: boolean = window.innerWidth < windowBreakpoint; // Example breakpoint
 
   ngOnInit() {
+    this.userAuthenticationService.isLoggedIn().subscribe((isLoggedIn) => {
+      console.log(isLoggedIn);
+      if (isLoggedIn) {
+        this.router.navigate(['/dashboard']);
+      }
+    });
+
     this.contentActive = true;
+    this.safTChildServiceProxy.getDeviceInfo().subscribe((data) => {
+      console.log(data);
+    });
   }
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
@@ -41,28 +51,20 @@ export class LoginComponent implements OnInit {
   constructor(
     private safTChildServiceProxy: SafTChildServiceProxy,
     private router: Router,
+    private userAuthenticationService: UserAuthenticationService,
   ) {}
   login() {
     console.log(this.formGroup);
     this.isLoading = true;
-    timer(1500)
-      .pipe(
-        // After the timer emits, switch to the getLogin() observable
-        switchMap(() => this.safTChildServiceProxy.getLogin()),
-      )
-      .subscribe({
-        next: () => {
-          console.log('good');
+    this.userAuthenticationService
+      .login(this.username.value, this.password.value)
+      .subscribe((isAuthenticated) => {
+        if (isAuthenticated) {
           this.router.navigate(['/dashboard']);
-          // Remember to set isLoading to false once the operation is complete
-          this.isLoading = false;
-        },
-        error: () => {
-          console.log('bad');
-          // Handle error, possibly also setting isLoading to false
-          this.isLoading = false;
+        } else {
           this.showInvalidLogin = true;
-        },
+        }
+        this.isLoading = false;
       });
   }
 }

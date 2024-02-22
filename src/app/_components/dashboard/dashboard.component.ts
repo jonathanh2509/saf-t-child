@@ -9,7 +9,7 @@ import { EditModalComponent } from '../edit-modal/edit-modal.component';
   styleUrl: './dashboard.component.scss',
 })
 export class DashboardComponent implements OnInit {
-  isMobile: boolean = window.innerWidth < windowBreakpoint; // Example breakpoint
+  isMobile: boolean = window.innerWidth < windowBreakpoint;
 
   constructor(public matDialog: MatDialog) {}
 
