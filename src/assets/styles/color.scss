@@ -1,0 +1,172 @@
+/*------------------------------------
+- COLOR main-aqua
+------------------------------------*/
+
+$main_aqua_t1: #2596be;
+$main_aqua_t2: #1c7493;
+$main_aqua_t3: #96d4ea;
+$main_aqua_t4: #abddee;
+$main_aqua_t5: #114557;
+$main_aqua_t6: #1a6a86;
+$main_aqua_t7: #1f7ea0;
+$main_aqua_t8: #08232c;
+$main_aqua_t9: #bce4f2;
+
+$main_aqua_shadow: rgba(37, 150, 190, 0.5);
+$main_aqua_text_color_dark_bright: #fff;
+
+.alert-main-aqua {
+  color: $main_aqua_t5;
+  background-color: $main_aqua_t9;
+  border-color: $main_aqua_t4;
+}
+
+.alert-main-aqua hr {
+  border-top-color: $main_aqua_t3;
+}
+
+.alert-main-aqua .alert-link {
+  color: $main_aqua_t8;
+}
+
+.badge-main-aqua {
+  color: $main_aqua_text_color_dark_bright;
+  background-color: $main_aqua_t1;
+}
+
+.badge-main-aqua[href]:hover,
+.badge-main-aqua[href]:focus {
+  color: $main_aqua_text_color_dark_bright;
+  background-color: $main_aqua_t2;
+}
+
+.bg-main-aqua {
+  background-color: $main_aqua_t1 !important;
+}
+
+a.bg-main-aqua:hover,
+a.bg-main-aqua:focus,
+button.bg-main-aqua:hover,
+button.bg-main-aqua:focus {
+  background-color: $main_aqua_t2 !important;
+}
+
+.border-main-aqua {
+  border-color: $main_aqua_t1 !important;
+}
+
+.btn-main-aqua {
+  color: $main_aqua_text_color_dark_bright !important;
+  background-color: $main_aqua_t1 !important;
+  border-color: $main_aqua_t1 !important;
+}
+
+.btn-main-aqua:hover {
+  color: $main_aqua_text_color_dark_bright;
+  background-color: $main_aqua_t7;
+  border-color: $main_aqua_t2;
+}
+
+.btn-main-aqua:focus,
+.btn-main-aqua.focus {
+  box-shadow: 0 0 0 0.2rem $main_aqua_shadow;
+}
+
+.btn-main-aqua.disabled,
+.btn-main-aqua:disabled {
+  color: $main_aqua_text_color_dark_bright;
+  background-color: $main_aqua_t1;
+  border-color: $main_aqua_t1;
+}
+
+.btn-main-aqua:not(:disabled):not(.disabled):active,
+.btn-main-aqua:not(:disabled):not(.disabled).active,
+.show > .btn-main-aqua.dropdown-toggle {
+  color: $main_aqua_text_color_dark_bright;
+  background-color: $main_aqua_t2;
+  border-color: $main_aqua_t6;
+}
+
+.btn-main-aqua:not(:disabled):not(.disabled):active:focus,
+.btn-main-aqua:not(:disabled):not(.disabled).active:focus,
+.show > .btn-main-aqua.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem $main_aqua_shadow;
+}
+
+.btn-outline-main-aqua {
+  color: $main_aqua_t1;
+  background-color: transparent;
+  border-color: $main_aqua_t1;
+}
+
+.btn-outline-main-aqua:hover {
+  color: $main_aqua_text_color_dark_bright;
+  background-color: $main_aqua_t1;
+  border-color: $main_aqua_t1;
+}
+
+.btn-outline-main-aqua:focus,
+.btn-outline-main-aqua.focus {
+  box-shadow: 0 0 0 0.2rem $main_aqua_shadow;
+}
+
+.btn-outline-main-aqua.disabled,
+.btn-outline-main-aqua:disabled {
+  color: $main_aqua_t1;
+  background-color: transparent;
+}
+
+.btn-outline-main-aqua:not(:disabled):not(.disabled):active,
+.btn-outline-main-aqua:not(:disabled):not(.disabled).active,
+.show > .btn-outline-main-aqua.dropdown-toggle {
+  color: $main_aqua_text_color_dark_bright;
+  background-color: $main_aqua_t1;
+  border-color: $main_aqua_t1;
+}
+
+.btn-outline-main-aqua:not(:disabled):not(.disabled):active:focus,
+.btn-outline-main-aqua:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-main-aqua.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem $main_aqua_shadow;
+}
+
+.list-group-item-main-aqua {
+  color: $main_aqua_t5;
+  background-color: $main_aqua_t4;
+}
+
+.list-group-item-main-aqua.list-group-item-action:hover,
+.list-group-item-main-aqua.list-group-item-action:focus {
+  color: $main_aqua_t5;
+  background-color: $main_aqua_t3;
+}
+
+.list-group-item-main-aqua.list-group-item-action.active {
+  color: $main_aqua_text_color_dark_bright;
+  background-color: $main_aqua_t5;
+  border-color: $main_aqua_t5;
+}
+
+.table-main-aqua,
+.table-main-aqua > th,
+.table-main-aqua > td {
+  background-color: $main_aqua_t4;
+}
+
+.table-hover .table-main-aqua:hover {
+  background-color: $main_aqua_t3;
+}
+
+.table-hover .table-main-aqua:hover > td,
+.table-hover .table-main-aqua:hover > th {
+  background-color: $main_aqua_t3;
+}
+
+.text-main-aqua {
+  color: $main_aqua_t1 !important;
+}
+
+a.text-main-aqua:hover,
+a.text-main-aqua:focus {
+  color: $main_aqua_t2 !important;
+}
