@@ -7,11 +7,13 @@ import { DevicesComponent } from './_components/dashboard/devices/devices.compon
 import { VehiclesComponent } from './_components/dashboard/vehicles/vehicles.component';
 import { GroupsComponent } from './_components/dashboard/groups/groups.component';
 import { CreateAccountComponent } from './_components/create-account/create-account.component';
+import { AboutComponent } from './_components/about/about.component';
 
 const routes: Routes = [
   { path: 'bootstrap-samples', component: BootstrapSamplesComponent },
   { path: 'login', component: LoginComponent },
   { path: 'create-account', component: CreateAccountComponent },
+  { path: 'about', component: AboutComponent},
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   {
     path: 'dashboard',

@@ -44,8 +44,8 @@ export class CreateAccountComponent implements OnInit {
     this.americanPhoneNumberValidator,
   ]);
 
-  //TODO: Add phone number validation
-  // make sure that phone number is good and that
+  //TODO: Add email validation
+  // make sure that email is good and that
   // it is not assigned to another account
   email: FormControl<any | null> = new FormControl(null, [
     Validators.required,

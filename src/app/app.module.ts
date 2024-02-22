@@ -20,6 +20,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { DevicesComponent } from './_components/dashboard/devices/devices.component';
 import { VehiclesComponent } from './_components/dashboard/vehicles/vehicles.component';
 import { GroupsComponent } from './_components/dashboard/groups/groups.component';
+import { AboutComponent } from './_components/about/about.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +36,7 @@ import { GroupsComponent } from './_components/dashboard/groups/groups.component
     DevicesComponent,
     VehiclesComponent,
     GroupsComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
