@@ -130,14 +130,14 @@
       </div>
       <button
         type="button"
-        class="btn btn-primary"
+        class="btn btn-primary btn-main-aqua"
         (click)="createAccount()"
         *ngIf="!isLoading; else loadingTemplate"
       >
         Create Account
       </button>
       <ng-template #loadingTemplate>
-        <button type="button" class="btn btn-primary" disabled>
+        <button type="button" class="btn btn-primary btn-main-aqua" disabled>
           <span
             class="spinner-border spinner-border-sm"
             role="status"
