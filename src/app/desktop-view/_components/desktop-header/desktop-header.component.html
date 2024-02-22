@@ -12,9 +12,14 @@
       </button>
       <ul class="dropdown-menu dropdown-menu-end">
         <!-- Optional: dropdown-menu-end aligns the dropdown menu to the right -->
-        <li><a class="dropdown-item" href="/">Home</a></li>
-        <li><a class="dropdown-item" href="/login">Login</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
+        <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
+        <li *ngIf="!userAuthenticated">
+          <a class="dropdown-item" href="/login">Login</a>
+        </li>
+        <li *ngIf="userAuthenticated">
+          <a class="dropdown-item" (click)="onLogout()">Logout</a>
+        </li>
+        <li><a class="dropdown-item" href="#">About us</a></li>
       </ul>
     </li>
   </ul>

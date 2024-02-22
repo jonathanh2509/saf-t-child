@@ -1,4 +1,5 @@
-import { Component } from '@angular/core'
+import { Component, EventEmitter, Output } from '@angular/core';
+import { Input } from '@angular/core';
 
 @Component({
   selector: 'app-desktop-header',
@@ -6,12 +7,18 @@ import { Component } from '@angular/core'
   styleUrl: './desktop-header.component.scss',
 })
 export class DesktopHeaderComponent {
-  dropdownOpen = false
+  @Input() userAuthenticated: boolean = false;
+  @Output() logout = new EventEmitter<void>();
+  dropdownOpen = false;
   toggleDropdown() {
-    this.dropdownOpen = !this.dropdownOpen
+    this.dropdownOpen = !this.dropdownOpen;
   }
 
   closeDropdown() {
-    this.dropdownOpen = false
+    this.dropdownOpen = false;
+  }
+
+  onLogout() {
+    this.logout.emit();
   }
 }

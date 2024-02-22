@@ -9,7 +9,11 @@
     <input type="text" name="" id="" />
   </form>
 </mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-button type="submit" (click)="onClose()">Save</button>
-  <button mat-button type="button" (click)="onClose()">Close</button>
+<mat-dialog-actions class="gap-1" style="padding: 24px; padding-top: 6px">
+  <button class="btn btn-primary" type="submit" (click)="onClose()">
+    Save
+  </button>
+  <button class="btn btn-secondary" type="button" (click)="onClose()">
+    Close
+  </button>
 </mat-dialog-actions>
