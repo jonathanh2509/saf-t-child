@@ -14,13 +14,18 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './_components/dashboard/dashboard.component';
 import { CreateAccountComponent } from './_components/create-account/create-account.component';
 import { MatIconModule } from '@angular/material/icon';
-import { EditModalComponent } from './_components/edit-modal/edit-modal.component';
+import { EditModalComponent } from './_components/modals/edit-modal/edit-modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { DevicesComponent } from './_components/dashboard/devices/devices.component';
 import { VehiclesComponent } from './_components/dashboard/vehicles/vehicles.component';
 import { GroupsComponent } from './_components/dashboard/groups/groups.component';
 import { AboutComponent } from './_components/about/about.component';
+import { VehiclesModalComponent } from './_components/modals/vehicles-modal/vehicles-modal.component';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -37,6 +42,7 @@ import { AboutComponent } from './_components/about/about.component';
     VehiclesComponent,
     GroupsComponent,
     AboutComponent,
+    VehiclesModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +53,10 @@ import { AboutComponent } from './_components/about/about.component';
     MatDialogModule,
     MatIconModule,
     MatTooltipModule,
+    MatAutocompleteModule,
+    MatFormFieldModule,
+    MatInputModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
