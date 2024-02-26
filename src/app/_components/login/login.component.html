@@ -38,14 +38,14 @@
       />
       <button
         type="submit"
-        class="btn btn-primary"
+        class="btn btn-primary btn-main-aqua"
         (click)="login()"
         *ngIf="!isLoading; else loadingTemplate"
       >
         Login
       </button>
       <ng-template #loadingTemplate>
-        <button type="button" class="btn btn-primary" disabled>
+        <button type="button" class="btn btn-primary btn-main-aqua" disabled>
           <span
             class="spinner-border spinner-border-sm"
             role="status"
