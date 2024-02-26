@@ -1,0 +1,49 @@
+<h2 mat-dialog-title>Add Vehicle</h2>
+<mat-dialog-content>
+  <form action="" [formGroup]="form">
+    <mat-form-field appearance="fill">
+      <mat-label>Car Suggestions</mat-label>
+      <input
+        type="text"
+        matInput
+        [formControl]="name"
+        [matAutocomplete]="auto"
+      />
+
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+        <mat-option
+          *ngFor="let suggestion of filteredOptions | async"
+          [value]="suggestion"
+        >
+          {{ suggestion.text }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+    <label>Name</label>
+    <input type="text" name="" id="" />
+    <label>Make</label>
+    <input type="text" name="" id="" />
+    <label>Model</label>
+    <input type="text" name="" id="" />
+    <label>Year</label>
+    <input type="text" name="" id="" />
+    <label>Color</label>
+    <input type="text" name="" id="" />
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions class="gap-1" style="padding: 24px; padding-top: 6px">
+  <button class="btn btn-primary" type="submit" (click)="onClose()">
+    Save
+  </button>
+  <button class="btn btn-secondary" type="button" (click)="onClose()">
+    Close
+  </button>
+  <button
+    *ngIf="form.dirty"
+    class="btn btn-outline-secondary"
+    type="button"
+    (click)="onClose()"
+  >
+    Clear
+  </button>
+</mat-dialog-actions>

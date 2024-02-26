@@ -1,7 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { windowBreakpoint } from '../../../../../environment';
 import { MatDialog } from '@angular/material/dialog';
-import { EditModalComponent } from '../../edit-modal/edit-modal.component';
+import { EditModalComponent } from '../../modals/edit-modal/edit-modal.component';
 
 @Component({
   selector: 'app-devices',
